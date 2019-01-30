@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
-    class Program
+    class village
     {
-        static void Main(string[] args)
-        {
-        }
+   
+        public village nextvillage;
+        public string villagename;
+        public bool isAstrildeHere = false;
+        
     }
 }
