@@ -10,7 +10,9 @@ namespace ConsoleApp2
     {
         static void Main(string[]args)
         {
-            //node
+            countryside blue = new countryside();
+            blue.Launch();
+
         }
     }
     class Village
@@ -27,10 +29,15 @@ namespace ConsoleApp2
         Village Maple = new Village();
         Village Toronto = new Village();
         Village Ajax = new Village();
-        Village first;
-        Village last;
+        Village First;
+        Village Last;
+        Village temp;
+
         public void Launch()
         {
+           
+            Village First = Maple;
+            Village Last = Ajax;
             Maple.Villagename = "Maple";
             Maple.nextVillage = Toronto;
             Maple.previousVillage = null;
@@ -40,6 +47,20 @@ namespace ConsoleApp2
             Ajax.Villagename = "Ajax";
             Ajax.nextVillage = null;
             Ajax.nextVillage = Toronto;
+            Console.WriteLine(this.displayMap());
+        }
+        public string displayMap()
+        {
+            string listOfCities = "";
+            while (true)
+            {
+                listOfCities = listOfCities + First.Villagename + "_______";
+                temp = First.nextVillage;
+                listOfCities = listOfCities + temp.Villagename + "________";
+
+            }
+            return ""; 
+               
         }
     }
 }
