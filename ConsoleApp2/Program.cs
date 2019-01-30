@@ -13,12 +13,33 @@ namespace ConsoleApp2
             //node
         }
     }
-    class village
+    class Village
     {
            
-        public village nextvillage;
-        public string villagename;
+        public Village nextVillage;
+        public Village previousVillage;
+        public string Villagename;
         public bool isAstrildeHere = false;
         
+    }
+    class countryside
+    {
+        Village Maple = new Village();
+        Village Toronto = new Village();
+        Village Ajax = new Village();
+        Village first;
+        Village last;
+        public void Launch()
+        {
+            Maple.Villagename = "Maple";
+            Maple.nextVillage = Toronto;
+            Maple.previousVillage = null;
+            Toronto.Villagename = "Toronto";
+            Toronto.previousVillage = Maple;
+            Toronto.nextVillage = Ajax;
+            Ajax.Villagename = "Ajax";
+            Ajax.nextVillage = null;
+            Ajax.nextVillage = Toronto;
+        }
     }
 }
